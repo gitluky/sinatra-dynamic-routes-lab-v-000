@@ -19,7 +19,7 @@ class App < Sinatra::Base
     @number_of_times.times do
       @combined_phrase += " #{@phrase}"
     end
-    "#{@phrase}"
+    "#{@combined_phrase}"
   end
   # get '/say/:word1/:word2/:word3/:word4/:word5' do
   #
