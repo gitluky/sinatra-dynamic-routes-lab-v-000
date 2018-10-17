@@ -18,7 +18,7 @@ class App < Sinatra::Base
     @number_phrase = @number_of_times.times do
       @phrase += " #{@phrase}"
     end
-    
+    "#{@phrase}"
   end
   # get '/say/:word1/:word2/:word3/:word4/:word5' do
   #
