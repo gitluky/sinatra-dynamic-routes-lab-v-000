@@ -26,7 +26,7 @@ class App < Sinatra::Base
   get '/say/:word1/:word2/:word3/:word4/:word5' do
     @all_words = []
     params.each {|key, word| @all_words << word}
-    "#{@all_words.join(" ")}"
+    "#{@all_words.join(" ")}."
   end
   # get '/:operation/:number1/:number2' do
   #
