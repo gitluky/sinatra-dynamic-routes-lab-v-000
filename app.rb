@@ -16,14 +16,18 @@ class App < Sinatra::Base
     @number_of_times = params[:number].to_i
     @phrase = params[:phrase]
     @combined_phrase = ""
+    
     @number_of_times.times do
       @combined_phrase += " #{@phrase}"
     end
     "#{@combined_phrase}"
   end
-  # get '/say/:word1/:word2/:word3/:word4/:word5' do
-  #
-  # end
+  
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+    @all_words = []
+    params.each {|word| @all_words << word}
+    "#{@all_words.join(" ")}"
+  end
   # get '/:operation/:number1/:number2' do
   #
   # end
