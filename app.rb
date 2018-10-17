@@ -28,8 +28,22 @@ class App < Sinatra::Base
     params.each {|key, word| @all_words << word}
     "#{@all_words.join(" ")}."
   end
-  # get '/:operation/:number1/:number2' do
-  #
-  # end
+  
+  get '/:operation/:number1/:number2' do
+  @operation = params[:operation]
+  @number1 = params[:number1].to_i
+  @number2 = params[:number2].to_i
+  
+  case @operation
+  when "add"
+    @num = @number1 + @number2
+  when "subtract"
+    @num = @number1 - @number2
+  when "divide"
+    @num = @number1 / @number2
+  when "multiply"
+    @num = @number1 * @number2
+  end
+  "#{@num}"
 
 end
